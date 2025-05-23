@@ -9,8 +9,8 @@ module avalon_slave_MM_interface(//Avalon MM interface signals
                                  output reg [31:0] readdata,
                                  //Interface con nuestra logica.
                                    // Registros 0 y 1 de lectura 
-                                 output reg [31:0] reg0, reg1, 
-                                   // Datos para el registro interno reg3
+                                 output reg [31:0] reg0, reg1,reg3,
+                                   // Datos para el registro interno reg3 umbral deberia entrar al timer/counter
                                  input  [31:0] data,
                                    // Write enable para el registro interno.
                                  input   we);
@@ -25,7 +25,8 @@ always @(posedge clock)
     begin
           reg0 <= 32'd0;
           reg1 <= 32'd0;
-          reg2 <= 32'd0;    
+          reg2 <= 32'd0;  
+          reg3 <= 32'd0;    
           readdata <= 32'd0; 
      end                                
      else
@@ -38,6 +39,7 @@ always @(posedge clock)
                    case(address)
                      3'd0: reg0 <= writedata;
                      3'd1: reg1 <= writedata;
+                     3'd3: reg3 <= writedata;  
                     endcase           
               end
               // Proceso de lectura del interface Avalon MM
@@ -47,6 +49,7 @@ always @(posedge clock)
                     3'd0: readdata <= reg0;
                     3'd1: readdata <= reg1;
                     3'd2: readdata <= reg2;
+                    3'd3: readdata <= reg3;  
                     // Si la direccion es incorrecta devuelvo todo ceros.
                    default: readdata <= 32'd0; 
                    endcase  
