@@ -1,13 +1,11 @@
-module counter#(    parameter   END_COUNT = 32'hFFFFFFFF,
-                    parameter   WIDTH = $clog2(END_COUNT-1) // Width of the counter //quitar parametrizable ya que viene de top en los reg0, reg1, reg3
-                )
-                (
-                    input       iclk,                       // Signal clock
-                    input       ireset,                     // Signal reset
-                    input       ienable,                    // Signal enable
-                    input       [WIDTH-1:0] iload_value,    // End load value
-                    input       [WIDTH-1:0]umbral,
-                    output reg  [WIDTH-1:0] ocount,         // Count value
+module counter #(   parameter   WIDTH = 32)  
+                (   
+                    input               iclk,               // Signal clock
+                    input               ireset,             // Signal reset
+                    input               ienable,            // Signal enable
+                    input       [WIDTH-1:0]  iload_value,   // End load value
+                    input       [WIDTH-1:0]  threshold,     // Value 
+                    output reg  [WIDTH-1:0]  ocount,        // Count value
                     output reg  oterminal_count             // End count
                 );
 
