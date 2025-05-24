@@ -31,19 +31,17 @@ avalon_slave_MM_interface u1_av_sl_MM (//Avalon MM interface signals
                                         .data(ocount), 
                                         .we(1'b1)); // Write enabl. de reg3
 //fijar a 32
-counter#(    parameter   END_COUNT --> reg0 ,
-                    parameter   WIDTH = $clog2(END_COUNT-1) // Width of the counter
-                )
+counter counter_timer     
                 (
-                    .iclk(clk),                       // Signal clock
-                    .ireset(reset),                     // Signal reset
-                    .ienable(reg1[0]),                    // Signal enable
+                    .iclk(clk),            // Signal clock
+                    .ireset(reset),        // Signal reset
+                    .ienable(reg1[0]),     // Signal enable
+                    .clearIRQ(reg1[1]),
                     .iload_value(reg0),    // End load value
-                    .clcIRQ(reg1[1]),
-                    .umbral(reg3)
-                    .ocount(ocount),         // Count value
+                    .threshold(reg3)
                     .oterminal_count(IRQ)            // End count
-                    .oTCumbral(th)
+                    .oTCumbral(th),
+                    .ocount(ocount)         // Count value
                 );
 
 
