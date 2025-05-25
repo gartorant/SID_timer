@@ -28,23 +28,20 @@ avalon_slave_MM_interface u1_av_sl_MM (//Avalon MM interface signals
                                         .reg1(reg1), 
                                         .reg3(reg3),
                                          //Datos para el registro interno reg3
-                                        .data(ocount), 
+                                        .data(count), 
                                         .we(1'b1)); // Write enabl. de reg3
 //fijar a 32
 counter counter_timer     
                 (
-                    .iclk(clk),            // Signal clock
-                    .ireset(reset),        // Signal reset
-                    .ienable(reg1[0]),     // Signal enable
+                    .iclk(clk),               // Signal clock
+                    .ireset(reset),           // Signal reset
+                    .ienable(reg1[0]),        // Signal enable
                     .clearTC_count(reg1[1]),
-                    .iload_value(reg0),    // End load value
+                    .iload_value(reg0),       // End load value
                     .threshold(reg3)
-                    .oTC_count_count(IRQ)            // End count
+                    .oTC_count_count(IRQ)     // End count
                     .oTC_threshold(th),
-                    .ocount(ocount)         // Count value
+                    .ocount(count)            // Count value
                 );
-
-
-
 
 endmodule 
