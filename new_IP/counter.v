@@ -13,10 +13,10 @@ module counter #(   parameter   WIDTH = 32)
 
 always @(posedge iclk or negedge ireset)
     begin
-        if(!ireset)
+        if(ireset)
             begin
                 ocount          <= {WIDTH{1'b0}};
-                oTC_threshold		<= 1'b0;
+                oTC_threshold	<= 1'b0;
                 oTC_count       <= 1'b0;
             end
         else
