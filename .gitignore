@@ -119,3 +119,4 @@ dkms.conf
 
 # ficheros excluidos
 *.qarlog
+qar_info.json
