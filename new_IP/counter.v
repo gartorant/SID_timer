@@ -16,7 +16,7 @@ always @(posedge iclk or negedge ireset)
         if(!ireset)
             begin
                 ocount          <= {WIDTH{1'b0}};
-                oterminal_count <= 1'b0;
+                oTC_threshold		<= 1'b0;
                 oTC_count       <= 1'b0;
             end
         else

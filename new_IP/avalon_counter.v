@@ -33,13 +33,13 @@ avalon_slave_MM_interface u1_av_sl_MM (//Avalon MM interface signals
 //fijar a 32
 counter counter_timer     
                 (
-                    .iclk(clk),               // Signal clock
+                    .iclk(clock),               // Signal clock
                     .ireset(reset),           // Signal reset
                     .ienable(reg1[0]),        // Signal enable
                     .clearTC_count(reg1[1]),
                     .iload_value(reg0),       // End load value
-                    .threshold(reg3)
-                    .oTC_count_count(IRQ)     // End count
+                    .threshold(reg3),
+                    .oTC_count(IRQ),   // End count
                     .oTC_threshold(th),
                     .ocount(count)            // Count value
                 );

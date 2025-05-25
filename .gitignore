@@ -62,14 +62,12 @@ dkms.conf
 *.sof
 *.pof
 *.jic
-*.sopcinfo
 *.qpf
 *.qsf
 *.qdf
 *.qip
 *.qsys
 *.qdz
-*.qar
 *.sdc
 *.pin
 *.smsg
@@ -105,14 +103,12 @@ dkms.conf
 *.lib
 *.out
 *.gdb
-*.sopcinfo
 
 # Platform Designer
 /submodules/
 *.ptf
 *.spd
 *.xml
-*.sopcinfo
 
 # Otros archivos temporales de herramientas Intel/Altera
 *.restore
