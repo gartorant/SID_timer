@@ -36,11 +36,11 @@ counter counter_timer
                     .iclk(clk),            // Signal clock
                     .ireset(reset),        // Signal reset
                     .ienable(reg1[0]),     // Signal enable
-                    .clearIRQ(reg1[1]),
+                    .clearTC_count(reg1[1]),
                     .iload_value(reg0),    // End load value
                     .threshold(reg3)
-                    .oterminal_count(IRQ)            // End count
-                    .oTCumbral(th),
+                    .oTC_count_count(IRQ)            // End count
+                    .oTC_threshold(th),
                     .ocount(ocount)         // Count value
                 );
 
