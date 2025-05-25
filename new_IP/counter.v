@@ -26,7 +26,6 @@ always @(posedge iclk or negedge ireset)
                         if(ocount<(iload_value-1'b1))       //The loop executes one more time than the condition is met.
                             begin
                                 ocount          <= ocount+1'b1;
-                                oterminal_count <= 1'b0;
                             end
                         else // END COUNTER
                             begin
@@ -39,8 +38,6 @@ always @(posedge iclk or negedge ireset)
                         if(clearTC_threshold == 1'b1)
                             oTC_threshold <= 1'b0;
                     end                     
-                else
-                    oterminal_count <=1'b0;
             end
     end
 
