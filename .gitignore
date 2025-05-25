@@ -116,3 +116,6 @@ dkms.conf
 *.bak
 *.tmp
 *.swp
+
+# ficheros excluidos
+*.qarlog
