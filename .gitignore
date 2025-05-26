@@ -79,7 +79,6 @@ dkms.conf
 *.sld_design_entry.sci
 *.sld_design_entry_dsc.sci
 *.svd
-*.tcl
 
 # Nios II
 *.elf
@@ -120,3 +119,9 @@ dkms.conf
 # ficheros excluidos
 *.qarlog
 qar_info.json
+.qsys_edit/avalon_timer_qsys_schematic.nlv
+avalon_timer_qsys/avalon_timer_qsys_bb.v
+avalon_timer_qsys/avalon_timer_qsys_inst.v
+avalon_timer_qsys/avalon_timer_qsys_inst.vhd
+avalon_timer_qsys/avalon_timer_qsys.bsf
+avalon_timer_qsys/avalon_timer_qsys.cmp
